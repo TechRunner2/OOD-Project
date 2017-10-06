@@ -7,14 +7,15 @@
 using namespace std; //Setting namespace to std so that std:: is not needed
 
 int main(){
-    printf("Moch Purchasing application starting"); //Print to the console that the application is starting
+    printf("Mock Purchasing application starting\n"); //Print to the console that the application is starting
     ifstream infile; //sets the input file stream to be accessed through infile
     infile.open("users.txt"); //opens the users.txt which contains the unsernames and passwords in plain text as a concept
     if (infile.fail()){ //If file fails to open return error and close application
         cerr << "Error in opening file" << endl;
         exit(1);
     }
-
+    void login();
+    login();
 }
 
 class users{ //User class for both admins and Customers
@@ -126,6 +127,20 @@ string password;
 printf("Enter Username: ");
 cin >> user;
 printf("Enter Password: ");
+cin >> password;
+if (user == "test"){
+    if(password == "test"){
+        cout << "Access Granted" << endl;
+    }
+    else{
+        cout << "Access Denied" << endl;
+        exit(1);
+    }
 
+}
+else{
+    cout << "Account not found" << endl;
+    exit(1);
+}
 }
 
