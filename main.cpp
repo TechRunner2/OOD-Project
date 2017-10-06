@@ -15,8 +15,6 @@ int main(){
         exit(1);
     }
 
-
-
 }
 
 class users{ //User class for both admins and Customers
@@ -25,36 +23,62 @@ public:
     string password;
     bool admin;
 
-    void setUsername(string username);
-    string getUsername();
+    void setUsername(string username_n){
+        username = username_n;
+    }
+    string getUsername(){
+        return username;
+    }
 
-    void setPassword(string password);
-    string getPassword(string password);
+    void setPassword(string password_n);
+    string getPassword(){
+        return password;
+    }
 
-    void setAdmin(bool admin);
-    bool getAdmin();
+    void setAdmin(bool admin_n){
+        admin = admin_n;
+    }
+    bool getAdmin(){
+        return admin;
+    }
 };
 
 class location{ //Location class for locations of storage facilities
     string city;
     string state; 
 
-    void setCity(string city);
-    string getCity();
+    void setCity(string city_n){
+        city = city_n;
+    }
+    string getCity(){
+        return city;
+    }
 
-    void setState(string state);
-    string getState();
+    void setState(string state_n){
+        state = state_n;
+    }
+    string getState(){
+        return state;
+    }
 };
 
 class providers{ //Providers of items
     string company;
     string product;
 
-    void setCompany(string name);
-    string getCompany();
+    void setCompany(string name_n){
+        company = name_n;
+    }
+    string getCompany(){
+        return company;
+    }
 
-    void setProducts(string products);
-    string getProducts();
+    void setProducts(string products_n){
+        product = products_n;
+    }
+    string getProducts(){
+        return product;
+    }
 
 };
 
@@ -65,17 +89,33 @@ class product{ //products to be sold
     string provider;
     string serialNumber;
 
-    void setName(string name);
-    string getName();
+    void setName(string name_n){
+        name = name_n;
+    }
+    string getName(){
+        return name;
+    }
 
-    void setPrice(double price);
-    double getPrice();
+    void setPrice(double price_n){
+        price = price_n;
+    }
+    double getPrice(){
+        return price;
+    }
 
-    void setQuantity(int quantity);
-    int getQuantity();
+    void setQuantity(int quantity_n){
+        quantity = quantity_n;
+    }
+    int getQuantity(){
+        return quantity;
+    }
 
-    void setProvider(string provider);
-    string getProvider();
+    void setProvider(string provider_n){
+        provider = provider_n;
+    }
+    string getProvider(){
+        return provider;
+    }
     
 };
 
@@ -86,10 +126,6 @@ string password;
 printf("Enter Username: ");
 cin >> user;
 printf("Enter Password: ");
-string users[][] = {{brandon, test},{wade,test}};
-for(size_t bx = 0; bx < width; bx += users[][])
-for(size_t by = 0; by < height; by += block_height){
 
-}
 }
 
