@@ -24,18 +24,59 @@ public:
     string username;
     string password;
     bool admin;
+
+    void setUsername(string username);
+    string getUsername();
+
+    void setPassword(string password);
+    string getPassword(string password);
+
+    void setAdmin(bool admin);
+    bool getAdmin();
 };
 
 class location{ //Location class for locations of storage facilities
+    string city;
+    string state; 
 
+    void setCity(string city);
+    string getCity();
+
+    void setState(string state);
+    string getState();
 };
 
-class provider{ //Providers of items
+class providers{ //Providers of items
+    string company;
+    string product;
+
+    void setCompany(string name);
+    string getCompany();
+
+    void setProducts(string products);
+    string getProducts();
 
 };
 
 class product{ //products to be sold
-	
+    string name;
+    double price;
+    int quantity;
+    string provider;
+    string serialNumber;
+
+    void setName(string name);
+    string getName();
+
+    void setPrice(double price);
+    double getPrice();
+
+    void setQuantity(int quantity);
+    int getQuantity();
+
+    void setProvider(string provider);
+    string getProvider();
+    
 };
 
 
