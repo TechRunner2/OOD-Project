@@ -2,8 +2,8 @@
 #include <iostream>
 
 using namespace std;
-
-class location{ //Location class for locations of storage facilities
+//Location class for locations of storage facilities
+class location{ 
 private:
     string city;
     string state; 

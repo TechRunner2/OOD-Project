@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
-class product{ //products to be sold
+//products to be sold
+class product{ 
 private:
     string name;
     double price;

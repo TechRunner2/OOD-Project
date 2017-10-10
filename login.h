@@ -2,14 +2,12 @@
 #include <string>
 #include <stdio.h>
 #include <vector>
-#include "shell.h"
 
 using namespace std;
 
 string usernames[] = {"wade","Brandon","Joseph"};
 string passwords[] = {"test","test","test"};
 
-shell sh;
 
 class login{
 private:
@@ -18,19 +16,21 @@ private:
     string newuser;
     string newpassword;
 public:
-    void begin(){
+    int begin(){
         cout << "Enter Username: ";
         cin >> user;
         for(int x = 0; x < sizeof(usernames)/sizeof(usernames[0]); x++){
+            cout << "Enter Password: ";
+            cin >> password;
             if(user == usernames[x]){
-                cout << "Enter Password: ";
-                cin >> password;
                 if(password == passwords[x]){
-                    cout << "Access Granted";
-                    sh.logedin();
+                    cout << "Access Granted\n";
+                    return 1;
                 }
-                else
-                cout << "Username or Password does not match";
+                else{
+                cout << "Username or Password does not match\n";
+                return 0;
+                }
             }
         }
     }
@@ -44,14 +44,14 @@ public:
             }
             else{
                 for(int x = 0; x < sizeof(usernames)/sizeof(usernames[0]); x++){
-                   newUser(newuser); 
+                   newUser(newuser, x); 
                    newPassword(newuser, x);
 
                 }
             }
         }
     }
-    void newUser(string user){
+    void newUser(string user, int x){
        usernames[x+1] = user; 
     } 
     void newPassword(string user, int x){

@@ -1,15 +1,11 @@
 #include <iostream>
 #include <string>
 #include <stdio.h>
-#include "users.h"
-#include "providers.h"
-#include "location.h"
 #include "login.h"
 
 using namespace std;
-login ln;
-
 class shell{
+login ln;
 private:
     string input;
     int loged_in;

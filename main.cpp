@@ -10,11 +10,32 @@ University: UMHB
 #include <fstream> //allows for access of files
 
 //User Header files
-#include "shell.h" //Shell header file
+#include "login.h"
+#include "location.h"
+#include "product.h"
+#include "providers.h"
+
 using namespace std; //Setting namespace to std so that std:: is not needed
 
 int main(){
-    shell sh; //Initalize Shell Class
-    sh.begin();
+    void start();
+    start();
     return 0; //Ends Program
+}
+
+void start(){
+    string input;
+    login ln;
+    printf("Enter help for list of commands: ");
+    cin >> input;
+    if(input == "help" || input == "Help" || input == "HELP"){
+        cout << "login: Login to an existing account\nadduser: Create a new user and password\n\n";
+    }
+    if(input == "login" || input == "Login" || input == "LOGIN"){
+        ln.begin();
+    }
+    if(input == "adduser"){
+        ln.adduser();
+    }
+    start();
 }

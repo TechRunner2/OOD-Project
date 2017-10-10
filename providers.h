@@ -2,8 +2,8 @@
 #include <string>
 
 using namespace std;
-
-class providers{ //Providers of items
+//Providers of items
+class providers{ 
 private:
     string company;
     string product;
