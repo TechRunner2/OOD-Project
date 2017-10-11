@@ -1,29 +1,37 @@
 #include <iostream>
 #include <string>
 #include <stdio.h>
-#include "login.h"
 
 using namespace std;
+
 class shell{
-login ln;
 private:
     string input;
     int loged_in;
+    int li = 0;
 public:
-    void begin(){
-        printf("Enter help for list of commands: ");
-        cin >> input;
-        if(input == "help" || input == "Help" || input == "HELP"){
-            cout << "login: Login to an existing account\nadduser: Create a new user and password";
-        }
-        if(input == "login" || input == "Login" || input == "LOGIN"){
-            ln.begin();
-        }
-        if(input == "adduser"){
-            ln.adduser();
-        }
-    }
     void logedin(){
+       if(li == 0){
+       cout << "Welcome" << endl; 
+       li = 1;
+       }
+       cout << "$: ";
+       cin >> input;
+       if(input == "exit"){
+           exit(1);
+       }
+       if(input == "help"){
+           cout << "exit: exit program\nhelp: list commands\nlist: list products avaliable\nbuy: buy product" << endl;
+           logedin();
+       }
+       if(input == "buy"){
+           cout << "Feature not implemented yet" << endl;
+           
+       }
+       else{
+           cout << "Command not recognized" << endl;
+           logedin();
+       }
 
     }
 

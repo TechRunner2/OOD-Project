@@ -14,6 +14,7 @@ University: UMHB
 #include "location.h"
 #include "product.h"
 #include "providers.h"
+#include "shell.h"
 
 using namespace std; //Setting namespace to std so that std:: is not needed
 
@@ -32,10 +33,18 @@ void start(){
         cout << "login: Login to an existing account\nadduser: Create a new user and password\n\n";
     }
     if(input == "login" || input == "Login" || input == "LOGIN"){
-        ln.begin();
+        int loged_in = ln.begin();
+        if(loged_in == 1){
+            shell sh;
+            sh.logedin();
+
+        }
     }
     if(input == "adduser"){
         ln.adduser();
     }
-    start();
+    else{
+        cout << "Command not recognized\n";
+        start();
+    }
 }

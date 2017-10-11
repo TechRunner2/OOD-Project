@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <stdio.h>
+
 using namespace std;
 //products to be sold
 class product{ 
@@ -9,6 +11,7 @@ private:
     int quantity;
     string provider;
     string serialNumber;
+    string description;
 
 public:
     void setName(string name_n){
@@ -38,5 +41,16 @@ public:
     string getProvider(){
         return provider;
     }
+
+    void setDescription(){
+        cout << "Enter the Description of the Poduct Below";
+        getline(cin, description);
+    }
+    string getDescription(){
+        return description;
+    }
     
+    void getInfo(){
+        cout << "Product: " << name << "\nPrice: " << price << "\nDescription" << description <<"\nProvider: " << provider;
+    }
 };

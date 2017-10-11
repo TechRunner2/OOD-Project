@@ -15,47 +15,57 @@ private:
     string password;
     string newuser;
     string newpassword;
+    bool allownew;
+    int usernumber;
 public:
     int begin(){
+        bool pass;
         cout << "Enter Username: ";
         cin >> user;
+        cout << "Enter Password: ";
+        cin >> password;
         for(int x = 0; x < sizeof(usernames)/sizeof(usernames[0]); x++){
-            cout << "Enter Password: ";
-            cin >> password;
             if(user == usernames[x]){
                 if(password == passwords[x]){
-                    cout << "Access Granted\n";
                     return 1;
                 }
                 else{
-                cout << "Username or Password does not match\n";
-                return 0;
+                    pass = false;
                 }
             }
+            else{pass = false;}
+        }
+        if(pass == false){
+           cout << "Username or Password does not match\n";
+           begin();
         }
     }
 
     void adduser(){
         cout << "Enter New Username: ";
         cin >> newuser;
+        allownew = true;
         for(int x = 0; x < sizeof(usernames)/sizeof(usernames[0]); x++){
-            if(newuser == usernames[x]){
-                break;
-            }
-            else{
-                for(int x = 0; x < sizeof(usernames)/sizeof(usernames[0]); x++){
-                   newUser(newuser, x); 
-                   newPassword(newuser, x);
-
-                }
-            }
+           if(newuser == usernames[x]){
+               cout << "Account already in use.\n";
+               allownew = false;
+               adduser();
+           } 
         }
+        if(allownew == true){
+            usernumber = sizeof(usernames)/sizeof(usernames[0]);
+            newUser(newuser, usernumber); 
+            newPassword(newuser, usernumber);
+        }
+        begin();
     }
     void newUser(string user, int x){
-       usernames[x+1] = user; 
+       x++;
+       usernames[x] = user; 
     } 
     void newPassword(string user, int x){
-        cout << "Enter New password for " << user;
+        x++;
+        cout << "Enter New password for: " << user;
         cin >> newpassword;
         passwords[x] = newpassword;
     }
