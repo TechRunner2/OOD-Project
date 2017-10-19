@@ -1,9 +1,12 @@
 #include <iostream>
 #include <string>
 #include <stdio.h>
+#include "purchase.h"
 
 using namespace std;
 
+purchase p;
+login ln;
 class shell{
 private:
     string input;
@@ -25,14 +28,20 @@ public:
            logedin();
        }
        if(input == "buy"){
-           cout << "Feature not implemented yet" << endl;
-           
+        int item_num;
+        cout << "Enter item #: ";
+        cin >> item_num;
+        p.buy(item_num);
+
        }
        else{
-           cout << "Command not recognized" << endl;
+            cout << "Command not recognized." << endl;
            logedin();
        }
 
+    }
+    void list(){
+        cout << "Products:\n" <<endl;
     }
 
 };
