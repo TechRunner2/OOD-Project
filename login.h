@@ -37,23 +37,26 @@ public:
         }
         if(pass == false){
            cout << "Username or Password does not match\n";
-           begin();
+           return 0;
         }
     }
 
     void adduser(){
         cout << "Enter New Username: ";
         cin >> newuser;
-        allownew = true;
         for(int x = 0; x < sizeof(usernames)/sizeof(usernames[0]); x++){
            if(newuser == usernames[x]){
                cout << "Account already in use.\n";
                allownew = false;
                adduser();
            } 
+           else{
+               allownew = true;
+               usernumber = x;
+           }
+
         }
         if(allownew == true){
-            usernumber = sizeof(usernames)/sizeof(usernames[0]);
             newUser(newuser, usernumber); 
             newPassword(newuser, usernumber);
         }
