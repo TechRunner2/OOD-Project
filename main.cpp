@@ -17,16 +17,10 @@ University: UMHB
 #include "shell.h"
 
 using namespace std; //Setting namespace to std so that std:: is not needed
-
-int main(){
-    void start();
-    start();
-    return 0; //Ends Program
-}
-
 void start(){
     string input;
     login ln;
+    shell sh;
     printf("Enter help for list of commands: ");
     cin >> input;
     if(input == "help" || input == "Help" || input == "HELP"){
@@ -35,7 +29,6 @@ void start(){
     if(input == "login" || input == "Login" || input == "LOGIN"){
         int loged_in = ln.begin();
         if(loged_in == 1){
-            shell sh;
             sh.logedin();
 
         }
@@ -45,6 +38,12 @@ void start(){
     }
     else{
         cout << "Command not recognized\n";
-        start();
+        sh.logedin();
     }
 }
+
+int main(){
+    start();
+    return 0; //Ends Program
+}
+
