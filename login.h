@@ -41,14 +41,14 @@ public:
         }
     }
 
-    void adduser(){
+    void useradd(){
         cout << "Enter New Username: ";
         cin >> newuser;
         for(int x = 0; x < sizeof(usernames)/sizeof(usernames[0]); x++){
            if(newuser == usernames[x]){
                cout << "Account already in use.\n";
                allownew = false;
-               adduser();
+               useradd();
            } 
            else{
                allownew = true;
