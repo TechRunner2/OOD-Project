@@ -3,14 +3,20 @@
 
 using namespace std;
 //Providers of items
-class providers{ 
+class Providers{ 
 private:
     string company;
     string product;
+    string address;
 
 public:
-    void setCompany(string name_n){
-        company = name_n;
+    Providers(string name, string items, string addr){
+        company = name;
+        product = items;
+        address = addr;
+    }
+    void setCompany(string name){
+        company = name;
     }
     string getCompany(){
         return company;
