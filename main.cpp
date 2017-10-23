@@ -11,7 +11,6 @@ University: UMHB
 
 //User Header files
 #include "login.h"
-#include "location.h"
 #include "product.h"
 #include "providers.h"
 #include "shell.h"
@@ -24,7 +23,7 @@ void start(){
     printf("Enter help for list of commands: ");
     cin >> input;
     if(input == "help" || input == "Help" || input == "HELP"){
-        cout << "login: Login to an existing account\nadduser: Create a new user and password\n\n";
+        cout << "login: Login to an existing account\nuseradd: Create a new user and password\n\n";
     }
     if(input == "login" || input == "Login" || input == "LOGIN"){
         int loged_in = ln.begin();
@@ -33,8 +32,8 @@ void start(){
 
         }
     }
-    if(input == "adduser"){
-        ln.adduser();
+    if(input == "useradd"){
+        ln.useradd();
     }
     else{
         cout << "Command not recognized\n";
