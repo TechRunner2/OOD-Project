@@ -4,7 +4,7 @@
 
 using namespace std;
 //products to be sold
-class product{ 
+class Product{ 
 private:
     string name;
     double price;
@@ -14,6 +14,16 @@ private:
     string description;
 
 public:
+    Product(string pname, double oprice, string provide, string number, string descr)
+        :name(pname){
+        if (oprice > 0){
+            price = oprice;
+        }
+        provider = provide;
+        serialNumber = number;
+        description = descr;
+    }
+
     void setName(string name_n){
         name = name_n;
     }
