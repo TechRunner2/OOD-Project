@@ -16,33 +16,20 @@ University: UMHB
 #include "shell.h"
 
 using namespace std; //Setting namespace to std so that std:: is not needed
-void start(){
+
+int main(){
+    Product laptop("Chromebook", 100, "Google", "101", "Cheap Laptop", 10);
     string input;
     login ln;
     shell sh;
-    printf("Enter help for list of commands: ");
-    cin >> input;
-    if(input == "help" || input == "Help" || input == "HELP"){
-        cout << "login: Login to an existing account\nuseradd: Create a new user and password\n\n";
-    }
-    if(input == "login" || input == "Login" || input == "LOGIN"){
-        int loged_in = ln.begin();
-        if(loged_in == 1){
-            sh.logedin();
-
-        }
-    }
-    if(input == "useradd"){
-        ln.useradd();
+    bool loged_in = ln.begin();
+    if(loged_in == true){
+    sh.logedin();
     }
     else{
-        cout << "Command not recognized\n";
-        sh.logedin();
+        ln.begin();
     }
-}
 
-int main(){
-    start();
     return 0; //Ends Program
 }
 

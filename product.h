@@ -14,7 +14,7 @@ private:
     string description;
 
 public:
-    Product(string pname, double oprice, string provide, string number, string descr)
+    Product(string pname, double oprice, string provide, string number, string descr, int quant)
         :name(pname){
         if (oprice > 0){
             price = oprice;
@@ -22,6 +22,7 @@ public:
         provider = provide;
         serialNumber = number;
         description = descr;
+        quantity = quant;
     }
 
     void setName(string name_n){

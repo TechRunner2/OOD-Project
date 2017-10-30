@@ -22,12 +22,15 @@ public:
         bool pass;
         cout << "Enter Username: ";
         cin >> user;
+        if(user == "new"){
+            useradd();
+        }
         cout << "Enter Password: ";
         cin >> password;
         for(int x = 0; x < sizeof(usernames)/sizeof(usernames[0]); x++){
             if(user == usernames[x]){
                 if(password == passwords[x]){
-                    return 1;
+                    return true;
                 }
                 else{
                     pass = false;
@@ -45,32 +48,25 @@ public:
         cout << "Enter New Username: ";
         cin >> newuser;
         for(int x = 0; x < sizeof(usernames)/sizeof(usernames[0]); x++){
-           if(newuser == usernames[x]){
-               cout << "Account already in use.\n";
-               allownew = false;
-               useradd();
-           } 
-           else{
-               allownew = true;
-               usernumber = x;
-           }
-
+            if(newuser == usernames[x]){
+                cout << "Account already in use.\n";
+                allownew = false;
+                useradd();
+            } 
+            else{
+                bool allownew = true;
+                usernumber = x;
+            }
+            if(allownew == true){
+                int y = ++x;
+                usernames[y] = newuser;
+                cout << "Enter New password for " << newuser << ":";
+                cin >> newpassword;
+                passwords[y] = newpassword;
+            }
         }
-        if(allownew == true){
-            newUser(newuser, usernumber); 
-            newPassword(newuser, usernumber);
-        }
+        
         begin();
-    }
-    void newUser(string user, int x){
-       x++;
-       usernames[x] = user; 
-    } 
-    void newPassword(string user, int x){
-        x++;
-        cout << "Enter New password for: " << user;
-        cin >> newpassword;
-        passwords[x] = newpassword;
     }
 
 };
