@@ -12,13 +12,15 @@ University: UMHB
 //User Header files
 #include "login.h"
 #include "product.h"
-#include "providers.h"
+#include "provider.h"
 #include "shell.h"
+#include "purchase.h"
 
 using namespace std; //Setting namespace to std so that std:: is not needed
 
 int main(){
     Product laptop("Chromebook", 100, "Google", "101", "Cheap Laptop", 10);
+    Provider Google("Google", "Chromebook", "California");
     string input;
     login ln;
     shell sh;
@@ -29,6 +31,8 @@ int main(){
     else{
         ln.begin();
     }
+    purchase p;
+    p.buy("laptop");
 
     return 0; //Ends Program
 }

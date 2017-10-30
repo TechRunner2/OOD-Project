@@ -42,6 +42,12 @@ public:
     void setQuantity(int quantity_n){
         quantity = quantity_n;
     }
+    void redQuantity(int red){
+        quantity -= red;
+    }
+    void incQuantity(int inc){
+        quantity += inc;
+    }
     int getQuantity(){
         return quantity;
     }

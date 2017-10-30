@@ -3,14 +3,14 @@
 
 using namespace std;
 //Providers of items
-class Providers{ 
+class Provider{ 
 private:
     string company;
     string product;
     string address;
 
 public:
-    Providers(string name, string items, string addr){
+    Provider(string name, string items, string addr){
         company = name;
         product = items;
         address = addr;
