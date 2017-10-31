@@ -14,7 +14,6 @@ University: UMHB
 #include "product.h"
 #include "provider.h"
 #include "shell.h"
-#include "purchase.h"
 
 using namespace std; //Setting namespace to std so that std:: is not needed
 
@@ -31,8 +30,6 @@ int main(){
     else{
         ln.begin();
     }
-    purchase p;
-    p.buy("laptop");
 
     return 0; //Ends Program
 }

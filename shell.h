@@ -1,12 +1,9 @@
 #include <iostream>
 #include <string>
 #include <stdio.h>
-#include "purchase.h"
 
 using namespace std;
 
-purchase p;
-login ln;
 class shell{
 private:
     string input;
@@ -15,7 +12,7 @@ private:
 public:
     void logedin(){
        if(li == 0){
-       cout << "Welcome" << endl; 
+       cout << "Welcome" << endl;
        li = 1;
        }
        cout << "$: ";
@@ -28,10 +25,6 @@ public:
            logedin();
        }
        if(input == "buy"){
-        int item_num;
-        cout << "Enter item #: ";
-        cin >> item_num;
-        p.buy(item_num);
 
        }
        else{
@@ -47,5 +40,9 @@ public:
 };
 
 class Buy{
+public:
+    void buyItem(string item){
+      cout << item << endl;
+    }
 
 };
