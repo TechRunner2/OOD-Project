@@ -28,13 +28,10 @@ public:
     cout << "Enter Password: ";
     cin >> password;
     for (int x = 0; x < sizeof(usernames) / sizeof(usernames[0]); x++) {
-      if (user == usernames[x]) {
-        if (password == passwords[x]) {
+      if ((user == usernames[x]) && (password == passwords[x])) {
           pass = true;
+          if(admins[x] == "true") { admin = true; }
           break;
-        } else {
-          pass = false;
-        }
       }
     }
     if (pass == false) {
