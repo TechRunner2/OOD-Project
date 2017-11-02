@@ -1,3 +1,4 @@
+#include "shell.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -15,7 +16,7 @@ private:
   int usernumber;
 
 public:
-  int begin() {
+  void begin() {
     bool pass;
     cout << "Enter Username: ";
     cin >> user;
@@ -27,17 +28,20 @@ public:
     for (int x = 0; x < sizeof(usernames) / sizeof(usernames[0]); x++) {
       if (user == usernames[x]) {
         if (password == passwords[x]) {
-          return true;
+          pass = true;
+          break;
         } else {
           pass = false;
         }
-      } else {
-        pass = false;
       }
     }
     if (pass == false) {
       cout << "Username or Password does not match\n";
-      return 0;
+      begin();
+    }
+    if (pass == true) {
+      shell sh;
+      sh.logedin();
     }
   }
 
