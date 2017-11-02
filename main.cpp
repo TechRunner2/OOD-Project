@@ -7,9 +7,7 @@ University: UMHB
 #include <string>
 #include "login.h"
 #include "shell.h"
-
 using namespace std; // Setting namespace to std so that std:: is not needed
-
 int main() {
   login ln;
   shell sh;
@@ -19,6 +17,5 @@ int main() {
   } else {
     ln.begin();
   }
-
   return 0; // Ends Program
 }

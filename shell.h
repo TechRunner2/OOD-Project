@@ -2,7 +2,6 @@
 #include <string>
 #include "product.h"
 #include "provider.h"
-
 using namespace std;
 
 Product laptop("Chromebook", 100, "Google", "101", "Cheap Laptop", 10);
@@ -13,7 +12,6 @@ private:
   string input;
   int loged_in;
   int li = 0;
-
 public:
   void logedin() {
     if (li == 0) {
@@ -32,7 +30,6 @@ public:
       logedin();
     }
     if (input == "buy") {
-
     } else {
       cout << "Command not recognized." << endl;
       logedin();

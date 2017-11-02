@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-
 using namespace std;
 // products to be sold
 class Product {
