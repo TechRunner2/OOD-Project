@@ -4,9 +4,6 @@
 #include "provider.h"
 using namespace std;
 
-Product laptop("Chromebook", 100, "Google", "101", "Cheap Laptop", 10);
-Provider Google("Google", "Chromebook", "California");
-
 class shell {
 private:
   string input;
