@@ -41,10 +41,16 @@ public:
 };
 
 class Buy {
+private:
+  string product;
 public:
-  void buyItem(string item) {
-    item.
-    cout << item << endl; }
+  void buyItem(string item, bool admin) {
+    if(item == "laptop") {
+      //laptop.decQuantity(1);
+
+    }
+    shell sh;
     sh.logedin(admin);
 
+  }
 };
