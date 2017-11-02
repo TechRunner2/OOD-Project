@@ -20,4 +20,8 @@ public:
 
   void setProducts(string products_n) { product = products_n; }
   string getProducts() { return product; }
+
+  string getAddress() { return address; }
+
+  void setAddress(string add) { address = add; }
 };

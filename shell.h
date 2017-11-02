@@ -1,8 +1,12 @@
 #include <iostream>
-#include <stdio.h>
 #include <string>
+#include "product.h"
+#include "provider.h"
 
 using namespace std;
+
+Product laptop("Chromebook", 100, "Google", "101", "Cheap Laptop", 10);
+Provider Google("Google", "Chromebook", "California");
 
 class shell {
 private:
@@ -39,5 +43,7 @@ public:
 
 class Buy {
 public:
-  void buyItem(string item) { cout << item << endl; }
+  void buyItem(string item) {
+    item.
+    cout << item << endl; }
 };

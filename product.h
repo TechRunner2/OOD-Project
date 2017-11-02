@@ -1,5 +1,4 @@
 #include <iostream>
-#include <stdio.h>
 #include <string>
 
 using namespace std;
@@ -12,6 +11,7 @@ private:
   string provider;
   string serialNumber;
   string description;
+  int maxQuantity{10};
 
 public:
   Product(string pname, double oprice, string provide, string number,
@@ -25,27 +25,31 @@ public:
     description = descr;
     quantity = quant;
   }
-
+  // Sets
   void setName(string name_n) { name = name_n; }
-  string getName() { return name; }
-
   void setPrice(double price_n) { price = price_n; }
-  double getPrice() { return price; }
-
   void setQuantity(int quantity_n) { quantity = quantity_n; }
   void redQuantity(int red) { quantity -= red; }
   void incQuantity(int inc) { quantity += inc; }
-  int getQuantity() { return quantity; }
-
   void setProvider(string provider_n) { provider = provider_n; }
-  string getProvider() { return provider; }
-
   void setDescription() {
     cout << "Enter the Description of the Poduct Below";
     getline(cin, description);
   }
-  string getDescription() { return description; }
+  void incMax(int inc) { maxQuantity += inc; }
+  void restock() {
+    if (quantity < maxQuantity) {
+      int order = maxQuantity - quantity;
+      quantity += order;
+    }
+  }
 
+  // Gets
+  string getName() { return name; }
+  double getPrice() { return price; }
+  int getQuantity() { return quantity; }
+  string getProvider() { return provider; }
+  string getDescription() { return description; }
   void getInfo() {
     cout << "Product: " << name << "\nPrice: " << price << "\nDescription"
          << description << "\nProvider: " << provider;
