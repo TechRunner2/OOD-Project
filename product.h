@@ -29,7 +29,7 @@ public:
   void setName(string name_n) { name = name_n; }
   void setPrice(double price_n) { price = price_n; }
   void setQuantity(int quantity_n) { quantity = quantity_n; }
-  void redQuantity(int red) { quantity -= red; }
+  void decQuantity(int red) { quantity -= red; }
   void incQuantity(int inc) { quantity += inc; }
   void setProvider(string provider_n) { provider = provider_n; }
   void setDescription() {
