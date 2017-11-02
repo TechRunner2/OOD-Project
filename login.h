@@ -14,10 +14,11 @@ private:
   string newpassword;
   bool allownew;
   int usernumber;
+  bool admin{false};
+  bool pass{false};
 
 public:
   void begin() {
-    bool pass;
     cout << "Enter Username: ";
     cin >> user;
     if (user == "new") {
