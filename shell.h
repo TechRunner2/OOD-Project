@@ -29,10 +29,15 @@ public:
       logedin(admin);
     }
     if (input == "buy") {
-    } else {
+      string product;
+      cout << "Enter Product Name: ";
+      cin >> product;
+      //buyItem(product, admin);
+    }
     if (input == "admin" && admin == true){
       cout << "nothing yet" << endl;
     }
+    else {
       cout << "Command not recognized." << endl;
       logedin(admin);
     }
