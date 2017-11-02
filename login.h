@@ -40,7 +40,7 @@ public:
     }
     if (pass == true) {
       shell sh;
-      sh.logedin();
+      sh.logedin(admin);
     }
   }
 

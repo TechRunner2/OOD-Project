@@ -12,8 +12,9 @@ private:
   string input;
   int loged_in;
   int li = 0;
+  bool admin;
 public:
-  void logedin() {
+  void logedin(bool admin) {
     if (li == 0) {
       cout << "Welcome" << endl;
       li = 1;
@@ -27,12 +28,16 @@ public:
       cout << "exit: exit program\nhelp: list commands\nlist: list products "
               "avaliable\nbuy: buy product"
            << endl;
-      logedin();
+      if(admin == true){ cout << "admin menu" << endl;}
+      logedin(admin);
     }
     if (input == "buy") {
     } else {
+    if (input == "admin" && admin == true){
+      cout << "nothing yet" << endl;
+    }
       cout << "Command not recognized." << endl;
-      logedin();
+      logedin(admin);
     }
   }
   void list() { cout << "Products:\n" << endl; }
@@ -43,4 +48,5 @@ public:
   void buyItem(string item) {
     item.
     cout << item << endl; }
+    sh.logedin(admin);
 };
