@@ -5,6 +5,7 @@ using namespace std;
 
 string usernames[] = {"wade", "Brandon", "Joseph"};
 string passwords[] = {"test", "test", "test"};
+string admins[] = {"false", "false", "true"};
 
 class login {
 private:
