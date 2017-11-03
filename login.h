@@ -29,9 +29,9 @@ public:
     cin >> password;
     for (int x = 0; x < sizeof(usernames) / sizeof(usernames[0]); x++) {
       if ((user == usernames[x]) && (password == passwords[x])) {
-          pass = true;
-          if(admins[x] == "true") { admin = true; }
-          break;
+        pass = true;
+        if(admins[x] == "true") { admin = true; }
+        break;
       }
     }
     if (pass == false) {
