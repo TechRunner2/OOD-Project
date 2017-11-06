@@ -8,6 +8,8 @@ private:
   string input;
   int loged_in;
   int li = 0;
+  string product;
+  double balance{0};
 
 public:
   void logedin(bool admin) {
