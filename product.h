@@ -32,7 +32,7 @@ public:
   void incQuantity(int inc) { quantity += inc; }
   void setProvider(string provider_n) { provider = provider_n; }
   void setDescription() {
-    cout << "Enter the Description of the Poduct Below";
+    cout << "Enter the Description of the Poduct: ";
     getline(cin, description);
   }
   void incMax(int inc) { maxQuantity += inc; }
@@ -50,7 +50,7 @@ public:
   string getProvider() { return provider; }
   string getDescription() { return description; }
   void getInfo() {
-    cout << "Product: " << name << "\nPrice: " << price << "\nDescription"
-         << description << "\nProvider: " << provider;
+    cout << "Product: " << name << "\nPrice: " << price << "\nDescription: "
+         << description << "\nProvider: " << provider << "\n" << endl;
   }
 };
