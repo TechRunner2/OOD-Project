@@ -44,6 +44,16 @@ public:
     } else {
       cout << "Command not recognized." << endl;
     }
+    else if (input == "addMoney"){
+      balance += 600;
+    }
+    else if (input == "balance"){
+      cout << "Balance is: " << balance << endl;
+    }
+    else {
+      cout << "Command not recognized.('help')" << endl;
+    }
+  }
   }
   void list() { cout << "Products:\n" << endl; }
 };
