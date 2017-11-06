@@ -23,9 +23,9 @@ public:
     if (input == "exit") {
       exit(1);
     }
-    if (input == "help") {
+    else if (input == "help") {
       cout << "exit: exit program\nhelp: list commands\nlist: list products "
-              "avaliable\nbuy: buy product"
+              "avaliable\nbuy [Product name]: buys product\nbalance: Check balance\n"
            << endl;
       if (admin == true) {
         cout << "admin menu" << endl;
