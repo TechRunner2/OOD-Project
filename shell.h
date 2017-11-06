@@ -31,18 +31,26 @@ public:
         cout << "admin menu" << endl;
       }
     }
-    if (input == "buy") {
-      string product;
-      cout << "Enter Product Name: ";
+    else if (input == "buy") {
       cin >> product;
       Buy b;
-      b.buyItem(product);
-      cout << "Thank you for your purchase." << endl;
+      bool pass = b.buyItem(product, balance) == true;
+      if(pass == true){
+        balance -= b.boughtItem(product);
+        cout << "Thank you for your purchase." << endl;
+      }else if(pass == false){
+        cout << "Balance not sufficient" << endl;
+      }
+      else{
+        cout << "Something did not go as planned please check spelling." << endl;
+      }
     }
-    if ((input == "admin") && (admin == true)) {
+    else if (input == "list"){
+      laptop.getInfo();
+      chromebook.getInfo();
+    }
+    else if ((input == "admin") && (admin == true)) {
       cout << "nothing yet" << endl;
-    } else {
-      cout << "Command not recognized." << endl;
     }
     else if (input == "addMoney"){
       balance += 600;
@@ -55,5 +63,4 @@ public:
     }
   }
   }
-  void list() { cout << "Products:\n" << endl; }
 };
