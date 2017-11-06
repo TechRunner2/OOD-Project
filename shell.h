@@ -8,10 +8,10 @@ private:
   string input;
   int loged_in;
   int li = 0;
-  bool admin;
 
 public:
   void logedin(bool admin) {
+    while (true){
     if (li == 0) {
       cout << "Welcome" << endl;
       li = 1;
@@ -28,7 +28,6 @@ public:
       if (admin == true) {
         cout << "admin menu" << endl;
       }
-      logedin(admin);
     }
     if (input == "buy") {
       string product;
@@ -37,13 +36,11 @@ public:
       Buy b;
       b.buyItem(product);
       cout << "Thank you for your purchase." << endl;
-      logedin(admin);
     }
     if ((input == "admin") && (admin == true)) {
       cout << "nothing yet" << endl;
     } else {
       cout << "Command not recognized." << endl;
-      logedin(admin);
     }
   }
   void list() { cout << "Products:\n" << endl; }

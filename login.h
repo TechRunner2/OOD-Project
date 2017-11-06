@@ -20,11 +20,9 @@ private:
 
 public:
   void begin() {
+    while (true){
     cout << "Enter Username: ";
     cin >> user;
-    if (user == "new") {
-      useradd();
-    }
     cout << "Enter Password: ";
     cin >> password;
     for (int x = 0; x < sizeof(usernames) / sizeof(usernames[0]); x++) {
@@ -65,6 +63,5 @@ public:
       }
     }
 
-    begin();
   }
 };
