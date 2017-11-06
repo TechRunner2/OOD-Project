@@ -33,35 +33,12 @@ public:
       }
     }
     if (pass == false) {
-      cout << "Username or Password does not match\n";
-      begin();
+      cout << "Username or Password does not match\n" << endl;
     }
     if (pass == true) {
       shell sh;
       sh.logedin(admin);
     }
   }
-
-  void useradd() {
-    cout << "Enter New Username: ";
-    cin >> newuser;
-    for (int x = 0; x < sizeof(usernames) / sizeof(usernames[0]); x++) {
-      if (newuser == usernames[x]) {
-        cout << "Account already in use.\n";
-        allownew = false;
-        useradd();
-      } else {
-        bool allownew = true;
-        usernumber = x;
-      }
-      if (allownew == true) {
-        int y = ++x;
-        usernames[y] = newuser;
-        cout << "Enter New password for " << newuser << ":";
-        cin >> newpassword;
-        passwords[y] = newpassword;
-      }
-    }
-
   }
 };
