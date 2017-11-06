@@ -4,8 +4,11 @@
 #include "provider.h"
 using namespace std;
 
+//Products
 Product laptop("Asus", 500, "Asus", "110", "A laptop", 10);
 Product chromebook("Chromebook", 350, "Google", "101", "A cheap chromebook",10);
+
+//Providers
 Provider Google("Google", "Chromebook", "California, USA");
 class Buy {
 private:
