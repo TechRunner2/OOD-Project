@@ -3,9 +3,9 @@
 #include <string>
 using namespace std;
 
-string usernames[] = {"wade", "Brandon", "Joseph"};
-string passwords[] = {"test", "test", "test"};
-string admins[] = {"false", "false", "true"};
+string usernames[] = {"wade", "Brandon", "Joseph", "test"};
+string passwords[] = {"test", "test", "test", "test"};
+string admins[] = {"false", "false", "true", "test"};
 
 class login {
 private:
