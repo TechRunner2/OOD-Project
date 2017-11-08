@@ -5,8 +5,9 @@
 using namespace std;
 
 //Products
-Product laptop("Asus", 500, "Asus", "110", "A laptop", 10);
-Product chromebook("Chromebook", 350, "Google", "101", "A cheap chromebook",10);
+Computer laptop("Asus", 500, "Asus", "110", "A laptop", 10, "intel", 16, 1024);
+Computer chromebook("Chromebook", 350, "Google", "101", "A cheap chromebook",10, "Arm" , 4, 60);
+Product eggs("eggs", 1.50, "Farms", "121", "A case of eggs", 100);
 
 //Providers
 Provider Google("Google", "Chromebook", "California, USA");
