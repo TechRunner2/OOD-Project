@@ -12,6 +12,7 @@ Product eggs("eggs", 1.50, "Farms", "121", "A case of eggs", 100);
 //Providers
 Provider Google("Google", "Chromebook", "California, USA");
 Provider Asus("Asus", "laptop", "N/A");
+double profit{.4};
 
 class Buy {
 private:
@@ -20,16 +21,16 @@ public:
   bool buyItem(string item, double balance) {
     if ((item == "laptop") && (balance-laptop.getPrice() >= 0)){
       laptop.decQuantity(1);
-      Asus.incMoney(laptop.getPrice()-100);
+      Asus.incMoney(laptop.getPrice()*profit);
       if(laptop.getQuantity() < 5){
         laptop.restock();
         cout << "laptops restocked" << endl;
       }
       return true;
     }
-    if ((item == "chromebook") && (balance-chromebook.getPrice())) {
+    if ((item == "chromebook") && (balance-chromebook.getPrice() >= 0)) {
       chromebook.decQuantity(1);
-      Google.incMoney(chromebook.getPrice()-100);
+      Google.incMoney(chromebook.getPrice()*profit);
       if(chromebook.getQuantity() < 5){
         chromebook.restock();
         cout << "laptops restocked";
