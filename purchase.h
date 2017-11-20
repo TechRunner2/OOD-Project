@@ -12,6 +12,8 @@ Product eggs("eggs", 1.50, "Farms", "121", "A case of eggs", 100);
 //Providers
 Provider Google("Google", "Chromebook", "California, USA");
 Provider Asus("Asus", "laptop", "N/A");
+Provider Farm("Farm", "eggs", "N/A");
+
 double profit{.4};
 
 class Buy {
@@ -36,7 +38,17 @@ public:
         cout << "laptops restocked";
       }
       return true;
-    }else{
+    }
+    if ((item == "eggs") && (balance-eggs.getPrice() >= 0)){
+      eggs.decQuantity(1);
+      Farm.incMoney(eggs.getPrice()*profit);
+      if(eggs.getQuantity() < 5){
+        eggs.restock();
+        cout << "Eggs restocked";
+      }
+      return true;
+    }
+    else{
       return false;
     }
   }
@@ -46,6 +58,9 @@ public:
     }
     if(item == "chromebook"){
       return chromebook.getPrice();
+    }
+    if(item == "eggs"){
+      return eggs.getPrice();
     }
   }
 };
