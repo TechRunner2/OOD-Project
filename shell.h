@@ -48,6 +48,7 @@ public:
     else if (input == "list"){
       laptop.getInfo();
       chromebook.getInfo();
+      eggs.getInfo();
     }
     else if ((input == "admin") && (admin == true)) {
       cout << "nothing yet" << endl;
