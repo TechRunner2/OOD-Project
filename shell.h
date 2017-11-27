@@ -54,7 +54,9 @@ public:
       cout << "nothing yet" << endl;
     }
     else if (input == "addMoney"){
-      balance += 600;
+      double mon;
+      cin >> mon;
+      balance += mon;
     }
     else if (input == "balance"){
       cout << "Balance is: " << balance << endl;
