@@ -5,13 +5,13 @@ using namespace std;
 
 class shell {
 private:
-  string input;
-  int loged_in;
   int li = 0;
-  string product;
   double balance{0};
 
 public:
+  string input;
+  string product;
+
   void logedin(bool admin) {
     while (true){
     if (li == 0) {
@@ -59,7 +59,7 @@ public:
       balance += mon;
     }
     else if (input == "balance"){
-      cout << "Balance is: " << balance << endl;
+      cout << "Balance is: $" << balance << endl;
     }
     else {
       cout << "Command not recognized.('help')" << endl;

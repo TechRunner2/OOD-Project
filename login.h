@@ -11,10 +11,6 @@ class login {
 private:
   string user;
   string password;
-  string newuser;
-  string newpassword;
-  bool allownew;
-  int usernumber;
   bool admin{false};
   bool pass{false};
 
